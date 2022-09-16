@@ -18,7 +18,7 @@ pipeline {
       }
       steps {
         echo 'Starting Docker Container'
-        sh 'docker run -d -p 8080:8080 test-app'
+        sh 'docker run -d --name web-app -p 8080:8080 test-app'
       }
     }
     stage('Post Deployment Cleanup') {
