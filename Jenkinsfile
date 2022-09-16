@@ -7,7 +7,6 @@ pipeline {
     stage('Pull') {
       steps {
         echo 'Cloning from remote repo'
-        
       }
     }
     stage('Build') {
