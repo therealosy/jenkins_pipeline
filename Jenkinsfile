@@ -14,10 +14,5 @@ pipeline {
         echo 'Running docker build'
       }
     }
-    stage('Deploy') {
-      steps {
-         echo 'Starting docker container'
-      }
-    }
   }
 }
