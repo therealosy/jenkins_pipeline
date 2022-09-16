@@ -7,7 +7,7 @@ pipeline {
     stage('Build and tag') {
       steps {
         echo 'Building Docker Image'
-        sh 'docker build -t test-app .'
+        sh 'docker build -t test-app:$BUILD_NUMBER .'
       }
     }
     stage('Deploy and run') {
@@ -18,7 +18,7 @@ pipeline {
       }
       steps {
         echo 'Starting Docker Container'
-        sh 'docker run -d --name web-app -p 8080:8080 test-app'
+        sh 'docker run -d --name web-app:$BUILD_NUMBER -p 8080:8080 test-app:$BUILD_NUMBER'
       }
     }
     stage('Post Deployment Cleanup') {
