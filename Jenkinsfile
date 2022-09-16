@@ -7,7 +7,7 @@ pipeline {
     stage('Build and tag') {
       steps {
         echo 'Building Docker Image'
-        sh 'docker build -t test-app'
+        sh 'docker build -t test-app .'
       }
     }
     stage('Deploy and run') {
@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Post Deployment Cleanup') {
       steps {
-        echo ''
+        echo 'Done.'
       }
     }
   }
