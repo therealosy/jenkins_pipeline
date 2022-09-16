@@ -4,14 +4,9 @@ pipeline {
   }
 
   stages {
-    stage('Pull') {
+    stage('Hello') {
       steps {
-        echo 'Cloning from remote repo'
-      }
-    }
-    stage('Build') {
-      steps {
-        echo 'Running docker build'
+        echo 'Hello from git'
       }
     }
   }
